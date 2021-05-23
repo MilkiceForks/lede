@@ -60,10 +60,12 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Import external feeds
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/vernesong/OpenClash.git package/openwrt-package
+    - name: Download dependencies
+      uses: actions/checkout@v2
+      with:
+        repository: vernesong/OpenClash
+        ref: master
+        path: package/lean/luci-app-openclash
         
     - name: Download package
       working-directory: ./openwrt
