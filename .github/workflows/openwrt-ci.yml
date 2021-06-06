@@ -54,14 +54,14 @@ jobs:
         sudo -E apt-get -y autoremove --purge
         sudo -E apt-get clean
 
-    - name: Download dependencies
-      run: |
-        git clone https://github.com/vernesong/OpenClash package/luci-app-openclash --no-checkout --depth=1
-        cd package/luci-app-openclash
-        git sparse-checkout init --cone
-        git sparse-checkout set luci-app-openclash
-        git checkout
-        cd ../../
+#     - name: Download dependencies
+#       run: |
+#         git clone https://github.com/vernesong/OpenClash package/luci-app-openclash --no-checkout --depth=1
+#         cd package/luci-app-openclash
+#         git sparse-checkout init --cone
+#         git sparse-checkout set luci-app-openclash
+#         git checkout
+#         cd ../../
 
     - name: Update & Install feeds
       run: |
